@@ -60,13 +60,15 @@
             margin: 0 auto 1.5rem;
             width: 160px;
             height: 160px;
+            
         }
+
 
         .profile-image img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: fill;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             border: 4px solid rgba(255, 255, 255, 0.3);
         }
@@ -76,8 +78,8 @@
             position: absolute;
             inset: 0;
             border-radius: 50%;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            opacity: 0.2;
+            background: linear-gradient(135deg, #3b82f6, #ca5cf6);
+            opacity: 0.1
         }
 
         .profile-name {
@@ -135,13 +137,14 @@
             margin-left: 320px;
             padding: 3rem;
         }
-
+        
         .section {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 5rem 0;
+            align-items: center;
         }
 
         .section:first-child {
@@ -171,17 +174,27 @@
             animation: fadeInUp 1s ease-out 0.2s both;
         }
 
+        /* linked in handel */
+        .badge-base, .LI-profile-badge{
+            height: 100% !important; 
+            width: 200px !important;
+        }
+        
+
         /* Cards */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            flex-grow: 1;
             margin-bottom: 3rem;
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
+
         .glass-card {
             background: rgba(255, 255, 255, 0.2);
+            height: 100%;
             backdrop-filter: blur(20px);
             padding: 2rem;
             border-radius: 1.5rem;
@@ -277,6 +290,7 @@
             color: #1f2937;
             text-align: center;
             margin-bottom: 3rem;
+            
         }
 
         /* Education section */
