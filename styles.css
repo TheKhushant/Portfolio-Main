@@ -6,7 +6,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 50%, #f3e8ff 100%);
+            background: linear-gradient(135deg, #e6e9ec 0%, #e0e7ff 50%, #f3e8ff 100%);
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -93,6 +93,13 @@
             color: #6b7280;
             font-weight: 500;
         }
+        
+        .align-center{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
 
         /* Navigation */
         .nav-menu {
@@ -157,7 +164,7 @@
             font-weight: 700;
             color: #1f2937;
             margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         .hero-name {
@@ -171,42 +178,81 @@
             font-size: 1.5rem;
             color: #6b7280;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.2s both;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        /* linked in handel */
-        .badge-base, .LI-profile-badge{
-            height: 100% !important; 
-            width: 200px !important;
-        }
         
-
         /* Cards */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             flex-grow: 1;
-            margin-bottom: 3rem;
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
+        .card{
+            padding: 20px;
+            box-shadow:
+                inset 0 -3em 3em rgb(0 200 0 / 30%),
+                0 0 0 2px white,
+                0.3em 0.3em 1em rgb(200 0 0 / 60%);
+        }
 
+        
+        .glass-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            transition: all 1.3s ease;
+        }
+        .LinkedInPost{
+            background: rgba(255, 255, 255, 0.2);
+            height: 80%;
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            transition: all 1.3s ease;
+            /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
+            box-shadow:
+            -15px -15px 25px white,   /* top-left white shadow */
+            10px 10px 15px rgba(0, 0, 0, 0.24);     /* bottom-right black shadow */ 
+            transition: all 0.3s ease;
+            padding: 20px;
+            position: relative;
+        }
+        .centerjustify{
+            position: absolute;         /*this is the only difference*/
+            top: 55%;           /*this is the only difference*/ 
+            left: 43%;          /*this is the only difference*/
+            transform: translate(-50%, -50%);
+        }
         .glass-card {
             background: rgba(255, 255, 255, 0.2);
-            height: 100%;
+            height: 80%;
             backdrop-filter: blur(20px);
-            padding: 2rem;
+            padding: 20px;
             border-radius: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 1.3s ease;
+            /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
+            box-shadow:
+            -15px -15px 25px white,   /* top-left white shadow */
+            10px 10px 15px rgba(0, 0, 0, 0.24);     /* bottom-right black shadow */ 
             transition: all 0.3s ease;
+            justify-content: space-between;
+            
         }
 
         .glass-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            /* box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); */
+            box-shadow:
+            -15px -15px 25px white,   /* top-left white shadow */
+            10px 10px 15px rgba(0, 0, 0, 0.326);     /* bottom-right black shadow */
             background: rgba(255, 255, 255, 0.3);
+            transition: all 1.3s ease;
         }
+        
 
         .card-title {
             font-size: 1.125rem;
@@ -229,22 +275,69 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
+            /* background: linear-gradient(135deg, #3b82f6, #8b5cf6); */
+            color: black;
             padding: 1rem 3rem;
             border-radius: 1rem;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            /* box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); */
             transition: all 0.3s ease;
             margin-bottom: 3rem;
             animation: fadeInUp 1s ease-out 0.6s both;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            box-shadow:
+            -15px -15px 25px white,   /* top-left white shadow */
+            10px 10px 15px rgba(0, 0, 0, 0.24);     /* bottom-right black shadow */ 
+            justify-content: space-between;
         }
 
         .download-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            box-shadow:
+            -15px -15px 25px white,   /* top-left white shadow */
+            10px 10px 15px rgba(0, 0, 0, 0.345);
+            
+        }
+
+        /* view more less */
+        .expandable-card {
+        position: relative;
+        max-height: 100%;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        }
+
+        .expandable-card.expanded {
+        max-height: 1000px; /* enough to show full text */
+        overflow-y: auto;
+        }
+
+        .toggle-btn {
+        background-color: transparent;
+        border: none;
+        color: #007BFF;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+        }
+
+        /* scroll to content */
+        .scrollable-text {
+            max-height: 70%; /* adjust as needed */
+            overflow-y: auto;
+            padding-right: 5px; /* space for scrollbar */
+        }
+
+        /* Optional: hide default scroll styling for better UI */
+        .scrollable-text::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .scrollable-text::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
         }
 
         /* Social icons */
@@ -270,18 +363,36 @@
             transition: all 0.3s ease;
         }
 
+        .social-icons-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 0;
+        }
         .social-icon:hover {
-            transform: scale(1.1);
+            /* transform: scale(1.1);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
             background: rgba(255, 255, 255, 0.3);
-            color: white;
+            color: white; */
+            border: 3px solid ;
         }
 
-        .social-icon.email:hover { background: #ef4444; }
-        .social-icon.linkedin:hover { background: #3b82f6; }
-        .social-icon.phone:hover { background: #10b981; }
-        .social-icon.whatsapp:hover { background: #16a34a; }
-        .social-icon.github:hover { background: #1f2937; }
+        .circle-box.email:hover { border: 1px dotted #ef4444; }
+        .circle-box.linkedin:hover { border: 1px dotted #3b82f6; }
+        .circle-box.phone:hover { border: 1px dotted #02ffab; }
+        .circle-box.whatsapp:hover { border: 1px dotted #16a34a; }
+        .circle-box.github:hover { border: 1px dotted #1f2937; }
+
+        .circle-box:hover{
+            background-color: transparent;
+            /* border: 1px solid rgb(0, 0, 0); */
+            border-radius: 50%;
+            box-shadow:
+            -15px -15px 25px white,   /* top-left white shadow */
+            10px 10px 15px rgba(0, 0, 0, 0.24);     /* bottom-right black shadow */ 
+            transition: all 0.3s ease;
+        }
 
         /* Section titles */
         .section-title {
@@ -559,5 +670,17 @@
             .nav-button {
                 min-width: 120px;
                 justify-content: center;
+            }
+            
+            .download-btn {
+            align-items: center;
+            border-radius: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 30px;
+            border-radius: 50%;
+            }
+            .hero-title, .download-btn p{
+                display: none
             }
         }

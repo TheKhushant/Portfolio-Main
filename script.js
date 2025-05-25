@@ -39,6 +39,17 @@
             }
         }
 
+        // view more less
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.expandable-card').forEach(card => {
+            const btn = card.querySelector('.toggle-btn');
+            btn.addEventListener('click', function () {
+                card.classList.toggle('expanded');
+                btn.textContent = card.classList.contains('expanded') ? 'View Less' : 'View More';
+            });
+            });
+        });
+
         // Contact form submission
         function handleSubmit() {
             const name = document.querySelector('input[placeholder="Your Name"]').value;
