@@ -95,3 +95,28 @@
                 observer.observe(el);
             });
         });
+
+
+        // view experience letter modal
+        function showExperienceLetter() {
+            const modal = document.getElementById('experienceLetterModal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+        function closeExperienceLetter() {
+            const modal = document.getElementById('experienceLetterModal');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+        // Optional: Close modal when clicking outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById('experienceLetterModal');
+            if (event.target === modal) {
+                closeExperienceLetter();
+            }
+        }
+        

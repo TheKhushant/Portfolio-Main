@@ -43,6 +43,10 @@
                 <i class="fas fa-folder-open"></i>
                 <span>Projects</span>
             </button>
+            <button class="nav-button" onclick="scrollToSection('projects')" data-section="projects">
+                <i class="fas fa-folder-open"></i>
+                <span>Certificate</span>
+            </button>
             <button class="nav-button" onclick="scrollToSection('contact')" data-section="contact">
                 <i class="fas fa-envelope"></i>
                 <span>Contact</span>
@@ -166,15 +170,26 @@
             <h2 class="section-title">Experience</h2>
             <div class="experience-list">
                 <div class="experience-item">
-                    <h3 class="experience-title">Software Engineer</h3>
-                    <p class="experience-company">Fidelity National Financial India • Feb 2023 - Present</p>
+                    <div>
+                        <h3 class="experience-title">Teaching of Programming Languages</h3>
+                        <div class="View">
+                            <button class="view-btn" onclick="showExperienceLetter()">View</button>
+                            <!-- Modal for Experience Letter -->
+                            <div id="experienceLetterModal" class="modal" style="display:none;">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeExperienceLetter()">&times;</span>
+                                    <img src="img/experience-letter.jpg" alt="Experience Letter" style="max-width:100%;height:auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="experience-company"> Disha Computer Institute : Nagpur, Maharashtra • Feb 2022 - 2024 </p>
                     <p class="experience-description">
-                        Working on full-stack development projects using .NET Core, React JS, and cloud technologies. 
-                        Responsible for designing and implementing scalable web applications.
+                        At Disha Computer Institute, I served as a programming and software instructor, where I delivered training to a diverse group of students, ranging from school and college students to working professionals. My role involved teaching both theoretical and practical aspects of programming and software tools.
                     </p>
                 </div>
                 <div class="experience-item">
-                    <h3 class="experience-title">Junior Software Developer</h3>
+                    <h3 class="experience-title">Website Developer & Graphic Designner</h3>
                     <p class="experience-company">Previous Company • 2019 - 2023</p>
                     <p class="experience-description">
                         Developed web applications using various technologies including Angular, JavaScript, and SQL Server.
